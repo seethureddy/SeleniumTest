@@ -1,16 +1,14 @@
-package Pages;
+package PageDefinition;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class LoginPage {
+public class LoginPageDef {
 
-	
-    private WebDriver driver;
+	public WebDriver driver;
 	
 	By searchText = By.id("global-search");
     By linkText = By.linkText("Get WordPress");
@@ -28,19 +26,16 @@ public class LoginPage {
     @FindBy(how=How.ID,using="wp-submit")
     WebElement submitButton;
     
-    public LoginPage(WebDriver driver) {
+    public LoginPageDef(WebDriver driver) {
 		this.driver = driver;
 	}
 		
 	public void geSearchText(String key) {
 		
-//		username.sendKeys(uName);
-//		password.sendKeys(pwd);
-//		loginButton.click();
 		driver.findElement(searchText).sendKeys(key);
 	}
     
-	public void clickButton() {
+	public void clickGetWordPress() {
 		driver.findElement(linkText).click();
 		//driver.findElement(searchButton).sendKeys(Keys.ENTER);
 	}
@@ -58,4 +53,5 @@ public class LoginPage {
 	public void submitPage() {
 		submitButton.click();
 	}
+    
 }

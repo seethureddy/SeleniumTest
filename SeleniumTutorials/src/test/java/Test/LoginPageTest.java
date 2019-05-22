@@ -34,7 +34,6 @@ public class LoginPageTest {
 			driver = BrowserFactory.startBrowser(browseName, url);
 
 			LoginPage page = PageFactory.initElements(driver, LoginPage.class);
-			//LoginPage page = new LoginPage(driver);
 			page.geSearchText("PAge Factory Sample");
 			page.clickButton();
 			page.loginButtonPress();
